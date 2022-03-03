@@ -1,7 +1,9 @@
+package FirstLesson;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lesson1 {
+public class ExerciseOne {
 
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_RESET = "\u001B[0m";
