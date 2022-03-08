@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class ExerciseOne extends Commons {
 
-    public static void runExerciseOne() {
+    public void runExerciseOne() {
 
         int numberToGuess = new Random().nextInt(100);
 

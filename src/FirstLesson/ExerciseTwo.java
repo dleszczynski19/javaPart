@@ -10,7 +10,7 @@ public class ExerciseTwo extends Commons {
         BY_STREAM, BY_FOREACH
     }
 
-    public static void runExerciseTwo() {
+    public void runExerciseTwo() {
 
         System.out.println("Please enter the size of array.");
         int arraySize = validateValue(scanner.nextLine(), ValidatorType.ARRAY_SIZE);

@@ -6,14 +6,17 @@ public class Run extends Commons {
 
     public static void main(String[] args) {
 
+        ExerciseOne exerciseOne = new ExerciseOne();
+        ExerciseTwo exerciseTwo = new ExerciseTwo();
+
         System.out.println("Type 1 to choose exercise one, and 2 for second one.");
         int exercise = validateValue(scanner.nextLine(), ValidatorType.EXERCISE_INDEX);
         switch (exercise) {
             case 1:
-                ExerciseOne.runExerciseOne();
+                exerciseOne.runExerciseOne();
                 break;
             case 2:
-                ExerciseTwo.runExerciseTwo();
+                exerciseTwo.runExerciseTwo();
                 break;
         }
     }
