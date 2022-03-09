@@ -1,4 +1,4 @@
-package FirstLesson;
+package FirstLesson.ExerciseOne;
 
 import Utilities.Commons;
 
@@ -7,7 +7,6 @@ import java.util.Random;
 public class ExerciseOne extends Commons {
 
     public void runExerciseOne() {
-
         int numberToGuess = new Random().nextInt(100);
 
         System.out.println("What's is your name?");

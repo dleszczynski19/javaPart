@@ -1,4 +1,4 @@
-package FirstLesson;
+package FirstLesson.ExerciseTwo;
 
 import Utilities.Commons;
 
@@ -11,7 +11,6 @@ public class ExerciseTwo extends Commons {
     }
 
     public void runExerciseTwo() {
-
         System.out.println("Please enter the size of array.");
         int arraySize = validateValue(scanner.nextLine(), ValidatorType.ARRAY_SIZE);
         int[] numbers = new int[arraySize];
@@ -26,7 +25,6 @@ public class ExerciseTwo extends Commons {
     }
 
     public static void getStatistics(int[] numbers, StatisticsType statisticsType) {
-
         String text;
         int maxValue;
         double average;
@@ -50,7 +48,6 @@ public class ExerciseTwo extends Commons {
     }
 
     public static int getMaximumValueByForeach(int[] array) {
-
         int maxValue = array[0];
 
         for (int x : array) {
@@ -60,7 +57,6 @@ public class ExerciseTwo extends Commons {
     }
 
     public static double getAverageValueByForeach(int[] array) {
-
         int sum = 0;
 
         for (int x : array) sum = sum + x;
