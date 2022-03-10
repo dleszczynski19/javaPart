@@ -3,7 +3,6 @@ package ThirdLesson.ExerciseThree;
 import Utilities.Commons;
 
 public class Utils extends Commons {
-
     public static String validateStringData(String name) {
         for (int i = 0; i < 5; i++) {
             if (name.matches("[a-zA-Z-]+")) {

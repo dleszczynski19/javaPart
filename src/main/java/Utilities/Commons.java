@@ -3,7 +3,6 @@ package Utilities;
 import java.util.Scanner;
 
 public class Commons {
-
     public static final String colorReset = "\u001B[0m";
     public static final String colorGreen = "\u001B[32m";
     public static final String colorRed = "\u001B[31m";

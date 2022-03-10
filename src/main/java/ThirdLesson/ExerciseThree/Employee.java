@@ -3,6 +3,10 @@ package ThirdLesson.ExerciseThree;
 import Utilities.Commons;
 
 public class Employee extends Commons {
+    private String name;
+    private String lastName;
+    private double salary;
+    private final int employeeId;
 
     public Employee(String name, String lastName, double salary, int employeeId) {
         this.name = name;
@@ -11,12 +15,8 @@ public class Employee extends Commons {
         this.employeeId = employeeId;
     }
 
-    private String name;
-    private String lastName;
-    private double salary;
-    private final int employeeId;
-
-    public String getAllData() {
+    @Override
+    public String toString() {
         return "Salary for employee id: " + colorCyan + employeeId + colorReset + " name: " + colorPurple + name + " "
                 + lastName + colorReset + " is " + colorBlue + salary + colorReset;
     }
@@ -31,10 +31,6 @@ public class Employee extends Commons {
 
     public double getSalary() {
         return salary;
-    }
-
-    public int getEmployeeId(){
-        return employeeId;
     }
 
     public void setName(String name) {

@@ -4,15 +4,15 @@ import Utilities.Commons;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.FileWriter;
 
 public class ProgramAction extends Utils {
-
-    public void addEmployee(Company company) {
-        company.setEmployeeData();
-        company.employeesList.add(new Employee(company.getEmployeeName(), company.getEmployeeLastName(),
-                company.getEmployeeSalary(), company.employeesList.size() + 1));
+    public void addEmployee(Company company, int employeeCount) {
+        for (int i = 0; i < employeeCount; i++) {
+            company.setEmployeeData();
+            company.employeesList.add(new Employee(company.getEmployeeName(), company.getEmployeeLastName(),
+                    company.getEmployeeSalary(), company.employeesList.size() + 1));
+        }
     }
 
     public void startProgram(Company company) {
@@ -31,7 +31,7 @@ public class ProgramAction extends Utils {
                 break;
             case 3:
                 System.out.println(colorGreen + "You chose add new employee." + colorReset);
-                programAction.addEmployee(company);
+                programAction.addEmployee(company, 1);
                 break;
             case 4:
                 System.out.println(colorGreen + "You chose edit employee." + colorReset);
@@ -74,7 +74,7 @@ public class ProgramAction extends Utils {
                 company.setEmployeeData();
                 employee.setAllData(company.getEmployeeName(), company.getEmployeeLastName(),
                         company.getEmployeeSalary());
-                System.out.println("New data for employee: " + employee.getAllData());
+                System.out.println("New data for employee: " + employee);
                 break;
             default:
                 System.out.println("Wrong value");
@@ -87,7 +87,7 @@ public class ProgramAction extends Utils {
         System.out.println(colorBlue + "2 – Display all employees data" + colorReset);
         System.out.println(colorCyan + "3 – Add new employee" + colorReset);
         System.out.println(colorYellow + "4 – Edit employee" + colorReset);
-        System.out.println(colorRed + "5 - Create json file" + colorReset);
+        System.out.println(colorGreen + "5 - Create json file" + colorReset);
         System.out.println(colorRed + "6 - End program" + colorReset);
     }
 
@@ -104,29 +104,12 @@ public class ProgramAction extends Utils {
     public void createJson(Company company) {
         JSONObject jsonObject = new JSONObject();
 
-//        record.put("user_id", company.employeesList.get(1).getEmployeeId());
-//        record.put("user_id", company.employeesList.get(2).getEmployeeId());
-//        json.put("id", record);
-        Employee employee;
-       jsonObject =  jsonObject.put("value", new JSONArray(company.employeesList));
-//        for (int i = 0; i < company.employeesList.size(); i++) {
-//            System.out.println("name before: " + company.employeesList.get(i).getName());
-//            employee = company.employeesList.get(i);
-//            System.out.println("name: " + company.employeesList.get(i).getName());
-//            record.put("ID", employee.getEmployeeId());
-//            record.put("Name", company.employeesList.get(i).getName());
-//            record.put("Last_Name", employee.getLastName());
-//            record.put("Salary", employee.getSalary());
-//            json.put(String.valueOf(i), record);
-//        }
-        System.out.println("Json: " + jsonObject);
-        writeToJson(jsonObject);
+        writeToJson(jsonObject.put("value", new JSONArray(company.employeesList)));
     }
 
     public void writeToJson(JSONObject json) {
-
         try {
-            FileWriter myWriter = new FileWriter(new File("src/test/resources/employeesData.json"));
+            FileWriter myWriter = new FileWriter("src/test/resources/jsonFiles/employeesData.json");
             myWriter.write(json.toString());
             myWriter.close();
         } catch (Exception e) {

@@ -3,7 +3,6 @@ package ThirdLesson.ExerciseThree;
 import java.util.ArrayList;
 
 public class Company extends Utils {
-
     public ArrayList<Employee> employeesList = new ArrayList<>();
     private String employeeName;
     private String employeeLastName;
@@ -34,9 +33,7 @@ public class Company extends Utils {
     }
 
     public void showAllEmployee() {
-        for (int i = 0; i <= employeesList.size() - 1; i++) {
-            System.out.println(employeesList.get(i).getAllData());
-        }
+        employeesList.forEach(System.out::println);
     }
 
     public void showSalarySum() {
