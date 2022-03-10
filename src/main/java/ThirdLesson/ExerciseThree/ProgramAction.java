@@ -109,7 +109,7 @@ public class ProgramAction extends Utils {
 
     public void writeToJson(JSONObject json) {
         try {
-            FileWriter myWriter = new FileWriter("src/test/resources/jsonFiles/employeesData.json");
+            FileWriter myWriter = new FileWriter("src/main/java/ThirdLesson/ExerciseThree/employeesData.json");
             myWriter.write(json.toString());
             myWriter.close();
         } catch (Exception e) {
